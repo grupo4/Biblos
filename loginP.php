@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "funciones.php"
 ?>
 
 <!DOCTYPE html>
@@ -19,17 +20,8 @@ session_start();
             . "Por favor vuelve e inténtalo de nuevo.";
             exit;
         }
-        @ $sgdb = mysql_pconnect("localhost", "biblosadmin", "1234");
-        if (!$sgdb) {
-            echo "Error: No se puede conectar al servidor. Por favor inténtalo de nuevo.";
-            exit;
-        }
-        $db = mysql_select_db("biblos_g4");
-        if (!$db) {
-            echo "Error: No se puede conectar al servidor. Por favor inténtalo de nuevo.";
-            exit;
-        } else { // Login correcto
-                          // Apertura de sesion
+        iniciaBD();
+        
 
             echo "Entramos a la bd";
             // Usuario y contrasena ok?
@@ -46,7 +38,7 @@ session_start();
             }
             else
                 echo "Usuario / contraseña incorrectos";
-        }
+        
         ?>
     </body>
 </html>
