@@ -1,6 +1,6 @@
 <?php
 include "funciones.php";
-controlSesion();
+compruebaSesion();
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,8 +19,8 @@ controlSesion();
 
         $sql = "select * from titulo where 
                 dewey_id_categoria_dewey='$cod_dewey'
-                AND id_apellido='$id_apellido'
-                AND id_titulo='$id_titulo'";
+                AND id_apellido_autor='$id_apellido'
+                AND id_título='$id_titulo'";
         
         echo $sql;
 
@@ -41,14 +41,14 @@ controlSesion();
             $titulo = mysql_fetch_array($resultado);
             // Saco en variables el codigo completo del libro
             $cat_dewey = $titulo['dewey_id_categoria_dewey'];
-            $id_apellido = $titulo['id_apellido'];
-            $id_titulo = $titulo['id_titulo'];
+            $id_apellido = $titulo['id_apellido_autor'];
+            $id_titulo = $titulo[2];
             echo "<tr>";
             echo "<td>" .
             $cat_dewey .
             "" . strtoupper($id_apellido) .
             "" . strtoupper($id_titulo) ."</td>";
-            echo "<td>" . htmlentities($titulo['nombre']) . "</td>";
+            echo "<td>-" . htmlentities($titulo['nombre_titulo']) . "</td>";
 
             $autores = obtenerAutores($cat_dewey, $id_apellido, $id_titulo);
             echo "<td><ul>";

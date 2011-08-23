@@ -32,4 +32,49 @@ function codAutor2NombreAutor($codAutor) {
     return $autor;
 }
 
+function obtenerAutor($idAutor) {
+    iniciaBD();
+
+    $query = "select nombre_autor,apellido1, apellido2 from autor where
+        id_autor='$idAutor'";
+    
+
+    //echo $query;
+    // (id,autor,editorial,nombre)
+    // values ($id,'$autor','$editorial','$nombre')";
+    $resultado = mysql_query($query);
+    if ($resultado) {
+        $i = 0;
+        while ($autor = mysql_fetch_array($resultado)) {
+            $autor_nombre = htmlentities($autor['nombre_autor']);
+            $autor_apellido1 = htmlentities($autor['apellido1']);
+            $autor_apellido2 = htmlentities($autor['apellido2']);
+            $autores[$i] = $autor_apellido1 . " " . $autor_apellido2 . ", " . $autor_nombre;
+            $i++;
+        }
+    }else
+        $autores[0] = "Fallo autores";
+
+    return $autores;
+}
+
+function retornarStringValido($cadena)
+{
+    $login = strtolower($cadena);
+    $b     = array("á","é","í","ó","ú","ä","ë","ï","ö","ü","à","è","ì","ò","ù","ñ"," ",",",".",";",":","¡","!","¿","?",'"');
+    $c     = array("a","e","i","o","u","a","e","i","o","u","a","e","i","o","u","n","","","","","","","","","",'');
+    $login = str_replace($b,$c,$login);
+    return $login;
+}  
+
+function retornarStringValidoNueva($cadena)
+{
+    $cadena= strtolower($cadena);
+    $b     = array("á","é","í","ó","ú","ä","ë","ï","ö","ü","à","è","ì","ò","ù");
+    $c     = array("a","e","i","o","u","a","e","i","o","u","a","e","i","o","u");
+    $cadena = str_replace($b,$c,$cadena);
+    return $cadena;
+}  
+
+
 ?>

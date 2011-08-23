@@ -22,7 +22,7 @@ compruebaSesion();
         <ul><li>Consultas
                 <ul>
                     <li><a href='consulta_general.php'>Consulta general</a>
-                    <li><a href='consulta_concreta.php'>Consulta concreta</a>    
+                    <li><a href='cespecificaG.php'>Consulta concreta</a>    
 
                 </ul>
                 <?php
