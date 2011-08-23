@@ -7,14 +7,14 @@ function compruebaSesion() {
 }
 
 function iniciaBD() {
-    @ $sgdb = mysql_pconnect("localhost", "biblosadmin", "1234");
+    @ $sgdb = mysql_connect("localhost", "root", "");
     if (!$sgdb) {
         echo "Error: No se puede conectar al servidor. Por favor inténtalo de nuevo.";
         exit;
     }
     $db = mysql_select_db("biblos_g4");
     if (!$db) {
-        echo "Error: No se puede conectar al servidor. Por favor inténtalo de nuevo.";
+        echo "Error: No se puede conectar a la bd. Por favor inténtalo de nuevo.";
         exit;
     }
 }

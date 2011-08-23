@@ -5,12 +5,12 @@ include "funciones.php"
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+<?php
         
         $dni = $_POST['dni'];
         $clave = $_POST['clave'];
@@ -29,9 +29,9 @@ include "funciones.php"
             $resultado = mysql_query($sql);
             if (mysql_affected_rows() == 1) {
                 // Login correcto
-                $usuario = mysql_fetch_array($resultado);              
+                $usuario = mysql_fetch_array($resultado);
                 $_SESSION['usuario'] = $usuario;
-                echo "Hola " . $usuario['nombre_usuario'] . " (" . $usuario['tipo_id_tipo_usuario'] . ")<br>";
+                echo "Hola " . $usuario['nombre_usuario'] . " (" . $usuario['tipo_usuario_id_tipo_usuario'] . ")<br>";
                 echo "<a href='menuG.php'>Dentro</a>";
 
 
@@ -40,5 +40,5 @@ include "funciones.php"
                 echo "Usuario / contraseña incorrectos";
         
         ?>
-    </body>
+</body>
 </html>
