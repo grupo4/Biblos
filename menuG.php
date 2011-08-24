@@ -26,21 +26,7 @@ compruebaSesion();
 
                 </ul>
 
-            <li>Administración
-                <ul>
-                    <li>Gestión Catálogo
-                        <ul>
-                            <li><a href='gestion_catalogo_alta.php'>Alta</a>
-                            <li><a href='gestion_catalogo_baja.php'>Baja</a>
-                            <li><a href='gestion_catalogo_modificacion.php'>Modificacion</a>
-                        </ul>  
-                    <li>Gestión Usuario
-                        <ul>
-                            <li><a href='gestion_usuario_alta.php'>Alta</a>
-                            <li><a href='gestion_usuario_baja.php'>Baja</a>
-                            <li><a href='gestion_usuario_modificacion.php'>Modificacion</a>
-                        </ul>  
-                </ul>    
+
                 <?php
                 // Comprobacion del tipo de usuario
                 if ($usuario['tipo_usuario_id_tipo_usuario'] == 0)
@@ -57,12 +43,22 @@ compruebaSesion();
 
 function mostrarOpcionesAdministracion() {
 //echo "Es administrador";
-    echo("<li>Administracion
-                <ul>
-                    <li><a href=''>Cat&aacute;logo</a>
-                    <li><a href=''>Usuarios</a>    
-                        
 
+    echo("
+                <li>Administración
+                <ul>
+                    <li>Gestión Catálogo
+                        <ul>
+                            <li><a href='gestion_catalogo_altaG.php'>Alta</a>
+                            <li><a href='gestion_catalogo_bajaG.php'>Baja</a>
+                            <li><a href='gestion_catalogo_modificacionG.php'>Modificacion</a>
+                        </ul>  
+                    <li>Gestión Usuario
+                        <ul>
+                            <li><a href='gestion_usuario_altaG.php'>Alta</a>
+                            <li><a href='gestion_usuario_bajaG.php'>Baja</a>
+                            <li><a href='gestion_usuario_modificacionG.php'>Modificacion</a>
+                        </ul>  
                 </ul>");
 }
 ?>
