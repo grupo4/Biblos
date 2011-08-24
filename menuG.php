@@ -25,6 +25,22 @@ compruebaSesion();
                     <li><a href='cespecificaG.php'>Consulta concreta</a>    
 
                 </ul>
+
+            <li>Administración
+                <ul>
+                    <li>Gestión Catálogo
+                        <ul>
+                            <li><a href='gestion_catalogo_alta.php'>Alta</a>
+                            <li><a href='gestion_catalogo_baja.php'>Baja</a>
+                            <li><a href='gestion_catalogo_modificacion.php'>Modificacion</a>
+                        </ul>  
+                    <li>Gestión Usuario
+                        <ul>
+                            <li><a href='gestion_usuario_alta.php'>Alta</a>
+                            <li><a href='gestion_usuario_baja.php'>Baja</a>
+                            <li><a href='gestion_usuario_modificacion.php'>Modificacion</a>
+                        </ul>  
+                </ul>    
                 <?php
                 // Comprobacion del tipo de usuario
                 if ($usuario['tipo_usuario_id_tipo_usuario'] == 0)
@@ -32,9 +48,9 @@ compruebaSesion();
                 ?>
 
             <li><a href='salida.php'>Salir</a>
-        </ul>
+        </ul></ul>
 
-    </body>
+</body>
 </html>
 
 <?php
