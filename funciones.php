@@ -76,5 +76,54 @@ function retornarStringValidoNueva($cadena)
     return $cadena;
 }  
 
+/**
+ *
+ * @param type $nombreTabla
+ * @param type $codCampo
+ * @param type $valorCampo1
+ * @param type $valorCampo2
+ * @param type $visibles 
+ */
+
+function cargardorLista2($nombreTabla, $codCampo, $valorCampo1, $valorCampo2, $visibles=1) {
+    iniciaBD();
+    $query = "SELECT * FROM $nombreTabla";
+    $resultado = mysql_query($query);
+
+    echo "<select name='$nombreTabla' size='$visibles'>";
+    while ($salida = mysql_fetch_array($resultado)) {
+        echo "<option value='".$salida[$codCampo]."-". strtoupper(substr($salida[$valorCampo1],0,3))."'>" . htmlentities($salida[$valorCampo1] . ", " . $salida[$valorCampo2]) . "</option>";
+    }
+    echo "</select><br />";
+    
+        while ($salida = mysql_fetch_array($resultado)) {
+        echo "\n<input type='hidden' name='$nombreTabla" . "_" . $salida[$codCampo] . "' value='" . htmlentities($salida[$valorCampo1]) . "'>";
+        //$tabla[$nombreTabla,$i] = $salida;
+    }
+    
+}
+
+/**
+ *
+ * @param type $nombreTabla
+ * @param type $codCampo
+ * @param type $valorCampo1
+ * @param type $visibles 
+ */
+
+function cargardorLista($nombreTabla, $codCampo, $valorCampo1, $visibles=1) {
+    iniciaBD();
+    $query = "SELECT * FROM $nombreTabla";
+    $resultado = mysql_query($query);
+
+    echo "<select name='$nombreTabla' size='$visibles'>";
+    while ($salida = mysql_fetch_array($resultado)) {
+        echo "<option value='" . $salida[$codCampo] . "'>(".$salida[$codCampo].") ".htmlentities($salida[$valorCampo1]) . "</option>";
+        //$tabla[$nombreTabla,$i] = $salida;
+    }
+    echo "</select><br />";
+  
+
+}
 
 ?>
