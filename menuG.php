@@ -1,6 +1,6 @@
 <?php
 include "funciones.php";
-compruebaSesion();
+//compruebaSesion();
 ?>        
 <!DOCTYPE html>
 <html>
