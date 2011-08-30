@@ -20,7 +20,7 @@ iniciaBD();
         $fecha_adquisicion = $_POST['fecha_adquisicion'];
         $idioma = $_POST['idioma'];
         $num_paginas = $_POST['num_paginas'];
-        $edición = $_POST['edicion'];
+        $edicion = $_POST['edicion'];
         $editorial_id_editorial = $_POST['editorial'];
 
         $titulo3 = strtoupper(substr($nombre_titulo, 0, 3));

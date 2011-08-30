@@ -32,7 +32,8 @@ include "funciones.php";
                     </tr>
                     <tr>
                         <th><font color="red"> *</font>  id_apellido_autor  </th>
-                        <th> <?php cargardorLista2("autor", "id_autor", "apellido1", "nombre_autor", "1"); ?> <input type="submit" value="Nuevo" /> </th>
+                        <th> <?php cargardorLista2("autor", "id_autor", "apellido1", "nombre_autor", "1"); ?> 
+                          </th>
                     </tr>
                     <tr>
                         <th> <font color="red"> *</font> nombre_titulo </th>

@@ -117,13 +117,31 @@ function cargardorLista($nombreTabla, $codCampo, $valorCampo1, $visibles=1) {
     $resultado = mysql_query($query);
 
     echo "<select name='$nombreTabla' size='$visibles'>";
+    echo "<option value='-1'>Seleccione opci&oacute;n...</option>";
     while ($salida = mysql_fetch_array($resultado)) {
         echo "<option value='" . $salida[$codCampo] . "'>(".$salida[$codCampo].") ".htmlentities($salida[$valorCampo1]) . "</option>";
         //$tabla[$nombreTabla,$i] = $salida;
     }
-    echo "</select><br />";
+    echo "</select>";
   
 
+}
+
+function separaIdApellidoAutor($autor){
+         // Tokenizar para separar el codigo de las 3 primeras letras del apellido1 del autor
+            // Ejemplo: 000-FOL
+            // Separo en $codAutor=0
+            // y $Apellido3='FOL'
+            // 
+            //$tok = strtok($autor, "-");
+            //$resultado['codAutor'] = $tok;
+            $resultado['codAutor']= strtok($autor, "-");
+            
+            //$tok = strtok("-");
+            //$resultado['$Apellido3'] = $tok;
+            $resultado['$Apellido3']= strtok("-");
+            
+            return $resultado;
 }
 
 ?>

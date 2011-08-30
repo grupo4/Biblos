@@ -4,7 +4,7 @@
  */
 
 
-function Valida( formulario ) {
+function Valida2( formulario ) {
     var valido=true;
     var i=0, strCamposVacios;
     var camposVacios=new Array();
