@@ -9,9 +9,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form action="gestion_usuario_bajaP.php" method="POST">
-            <label>DNI:</label><input type="text" name="dni" value="" size="9" /><br>
-           <input type="submit" value="Baja" />
-            <input type="reset" value="Borrar" name="Borrar" />
+        <?php
+        // put your code here
+        $dni =  $_POST['dni'];
+        ?>
     </body>
 </html>

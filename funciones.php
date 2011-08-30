@@ -77,4 +77,19 @@ function retornarStringValidoNueva($cadena)
 }  
 
 
+function cargardorLista($nombreTabla, $codCampo, $valorCampo1, $visibles=1) {
+    iniciaBD();
+    $query = "SELECT * FROM $nombreTabla";
+    $resultado = mysql_query($query);
+
+    echo "<select name='$nombreTabla' size='$visibles'>";
+    echo "<option value='-1'>Seleccione opci&oacute;n...</option>";
+    while ($salida = mysql_fetch_array($resultado)) {
+        echo "<option value='" . $salida[$codCampo] . "'>(".$salida[$codCampo].") ".htmlentities($salida[$valorCampo1]) . "</option>";
+        //$tabla[$nombreTabla,$i] = $salida;
+    }
+    echo "</select>";
+  
+
+}
 ?>
