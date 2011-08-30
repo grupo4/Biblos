@@ -1,7 +1,6 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include "funciones.php";
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,32 +11,28 @@ and open the template in the editor.
         <?php
         // put your code here
         
-        $nombre = $_POST['nombre'];
-        $apellido1 = $_POST['apellido1'];
-        $apellido2 = $_POST['apellido2'];
-        $email = $_POST['email'];
-        $direccion = $_POST['direcion'];
-        $telefono = $_POST['telefono'];
-        $plantilla_idplantilla = $_POST['plantilla_idplantilla'];
-        $tipo_usuario_id_tipo_usuario = $_POST['tipo_usuario_id_tipo_usuario'];
+        $dni = $_POST['dni'];
+        $tipo_usuario = $_POST['tipo_usuario'];
+        $clave = $_POST['clave'];
         
-        <?php
-$bdni = $_GET['bdni'];
-@ $db = mysql_pconnect("localhost", "root", "password");
-if (!$db){
-echo "Error: No se ha podido conectar a la base de datos. Por favor, prueba de
-nuevo más tarde.";
-exit;
-}
-mysql_select_db("curso");
-$consulta = "select * from usuario where dni = ".$bdni;
-$resultado = mysql_query($consulta);
-$row_resultado = mysql_fetch_array($resultado);
-$num_resultados = mysql_num_rows($resultado);
-if( $num_resultados > 1){
-    echo 'Error. encontrado más de un registro con ese dni';
-}
-        
+        $consulta = "update usuario 
+        set tipo_usuario_id_tipo_usuario='$tipo_usuario', clave='$clave' 
+        where dni='$dni'";
+        echo $consulta;
+
+        iniciaBD();
+        $resultado = mysql_query($consulta);
+        if ($resultado) {
+            $afectados = mysql_affected_rows();
+            if ($afectados > 0)
+                echo "Modificacion correcto ($afectados)";
+            else
+                echo "No existe el usuario en cuesti&oacute;n ($afectados)";
+        }
+        else {
+            echo "Fallo en modificacion:" . mysql_error();
+        }
+        echo "<a href='menuG.php'> Menu</a>";
 
         ?>
     </body>
