@@ -12,10 +12,9 @@ and open the template in the editor.
         <title>Baja de t&iacute;tulo</title>
         <script type="text/javascript" src="js/validaciones1.js"></script>
     </head>
-    <body>
+    <body  onload="iniciaFormulario()">
         <form action="gestion_catalogo_bajaP.php" method="POST" 
-              onSubmit="return ValidaCampoVacioConFormato(this);"
-              oninit="iniciaFormulario()">
+              onSubmit="return ValidaCampoVacioConFormato(this);"             >
             <fieldset>
                 <legend>BAJA DE TITULO</legend> 
                 <table border="1" cellspacing="6" bgcolor="#d3c8c8"> 
@@ -61,7 +60,6 @@ and open the template in the editor.
         } 
         
         function iniciaFormulario(){
-            alert("Cargando formulario");
                 document.getElementById("fila_titulo").style.visibility ="hidden";
         }
     </script>
