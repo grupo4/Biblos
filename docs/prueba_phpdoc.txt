@@ -1,0 +1,32 @@
+agregar al path de windows las carpeta c:\xampp\php y c:\xampp\php\PhpDocumentor
+Click con el botron derecho en "equipo", propriedades, configuracion avanzada del sistema, variables de entorno, variables del sistema, path
+
+instalar pear:
+
+bajar
+ http://pear.php.net/go-pear.phar 
+
+y copiarlo en la carpeta  c:\xampp\php
+
+
+executar command line de windows
+entrar en c:\xampp\php
+
+php go-pear.phar 
+
+
+terminada la instalacion aparece un archivo llamado PEAR_ENV.reg, executarlo y aceptar las modificaciones prpruesta al registro de windows
+
+executar
+pear update-channels
+
+y luego
+
+pear upgrade-all
+
+terminada la actualizacion, executar
+
+pear install phpdocumentor
+
+esta operacion creara una carpeta llamada PhpDocumentor dentro la carpeta c:\xampp\php\pear\
+copiar y remplazar el contenido dentro la carpeta C:\xampp\php\PhpDocumentor
