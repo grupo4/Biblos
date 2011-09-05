@@ -1,4 +1,9 @@
 <?php
+/**
+ * En este fichero podedos dar de baja un titulo de la base de datos
+ * @author Carlos
+ * @version 1.0
+ */
 include "funciones.php";
 ?>
 <!--

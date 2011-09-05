@@ -1,4 +1,9 @@
 <?php
+/**
+ * Este fichero nos permite hacer consultas especificas de un titulo
+ * @author Grupo4
+ * @version 1.0
+ */
 include "./funciones.php";
 compruebaSesion();
 ?>

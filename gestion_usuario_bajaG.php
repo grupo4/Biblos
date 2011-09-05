@@ -1,16 +1,20 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include "funciones.php";
+compruebaSesion();
+compruebaPermisos(true);
+?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+<form action="gestion_usuario_bajaP.php" method="POST">
+<label>DNI:</label>
+<input type="text" name="dni" value="" size="9" /><br>
+<input type="submit" value="Baja" />
+<input type="reset" value="Borrar" name="Borrar" />
+</body>
 </html>
+

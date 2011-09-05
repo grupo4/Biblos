@@ -1,6 +1,11 @@
 <?php
-session_start();
-if(!isset ($_SESSION['usuario'])) die("Debe logearse primero");
+/**
+ * en este fichero salimos de la base de datos 
+ */
+
+include "funciones.php";
+compruebaSesion();
+compruebaPermisos(true);
 ?>  
 
 <!DOCTYPE html>

@@ -1,5 +1,7 @@
 <?php
 include "funciones.php";
+compruebaSesion();
+compruebaPermisos(true);
 ?>
 <!--
 To change this template, choose Tools | Templates
@@ -10,6 +12,7 @@ and open the template in the editor.
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Baja de t&iacute;tulo</title>
+        <?php fijaPlantillaCSS();?>
         <script type="text/javascript" src="js/validaciones1.js"></script>
     </head>
     <body  onload="iniciaFormulario()">
@@ -22,13 +25,14 @@ and open the template in the editor.
                         <th>
                             <input type="radio" name="tipo_baja" value="1" onClick="return AdaptaFormulario(this,1);"/>Título
                             <input type="radio" name="tipo_baja" value="2" checked="checked" onClick="AdaptaFormulario(this,2)" />Código
+
                         </th>
 
                     </tr>
 
                     <tr id="fila_titulo">
                         <th>Titulo *</th>
-                        <td><input type="text" name="nombre_titulo" id="nombre_titulo" value="" size="70" maxlength="70"/></td>
+                        <td><input type="text" name="nombre_titulo" id="nombre_titulo" value="" size="70" maxlength="70" class="Obligado"/></td>
                     </tr>
                     <tr id="fila_codigo">
                         <th>Codigo Dewey *</th>

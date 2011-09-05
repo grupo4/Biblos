@@ -1,6 +1,7 @@
 <?php
 include "funciones.php";
 compruebaSesion();
+compruebaPermisos(true);
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,11 +1,14 @@
 <?php
 include "funciones.php";
+compruebaSesion();
+compruebaPermisos(true);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alta de titulo</title>
+        <?php fijaPlantillaCSS();?>
         <script type="text/javascript" src="./recursos/funciones.js"></script>
         
               <style type="text/css">@import url(recursos/calendar.css);</style>  
@@ -18,8 +21,8 @@ include "funciones.php";
         
         
     </head>
-    <body bgcolor="#b1b9ad ">
-        <form action="gestion_catalogo_altaP.php" method="POST"  onSubmit="return Valida(this);">
+    <body>
+        <form action="gestion_catalogo_altaP.php" method="POST"  onSubmit="return ValidaCampoVacioConFormato2(this);">
             <fieldset>
                 <legend align="center">   <font size="7" face="Blackadder ITC" align="center"> 
                     NUEVO TITULO </font></legend> 
@@ -28,16 +31,16 @@ include "funciones.php";
                 <table border="1" align="center" cellspacing="6" bgcolor="#d3c8c8"> 
                     <tr>
                         <th><font color="red"> *</font> categoria dewey  </th>
-                        <th> <?php cargardorLista("dewey", "id_categoria_dewey", "categoria_dewey", "1"); ?></th>
+                        <th> <?php cargardorLista("dewey", "id_categoria_dewey", "categoria_dewey", "1","Seleccione"); ?></th>
                     </tr>
                     <tr>
-                        <th><font color="red"> *</font>  id_apellido_autor  </th>
-                        <th> <?php cargardorLista2("autor", "id_autor", "apellido1", "nombre_autor", "1"); ?> 
+                        <th><font color="red"> *</font>  autor  </th>
+                        <th> <?php cargardorLista2("autor", "id_autor", "apellido1", "nombre_autor", "1","Seleccione"); ?> 
                           </th>
                     </tr>
                     <tr>
-                        <th> <font color="red"> *</font> nombre_titulo </th>
-                        <th> <input type="text" name="nombre_titulo" value="" size="30" />  </th>
+                        <th> <font color="red"> *</font> nombre_titulo  </th>
+                        <th> <input type="text" name="nombre_titulo" value="" size="30" class="Obligado" />  </th>
                     </tr>
                     <tr>
                         <th> isbn  </th>
@@ -67,8 +70,8 @@ include "funciones.php";
                     </tr>
 
                     <tr>
-                        <th> <font color="red"> *</font> editorial_id_editorial </th>
-                        <th> <?php cargardorLista("editorial", "id_editorial", "nombre_editorial", "1"); ?>  </th>
+                        <th> <font color="red"> *</font> editorial </th>
+                        <th> <?php cargardorLista("editorial", "id_editorial", "nombre_editorial", "1","Seleccione"); ?>  </th>
                     </tr>
                 </table>
                 <p align="center"><font color="red"> * Campos Obligatorios.</font></p>

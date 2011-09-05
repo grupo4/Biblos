@@ -1,4 +1,9 @@
 <?php
+/**
+ * Aqui podemos seleccionar un titulo de la base de datos
+ * @author grupo4
+ * @version 1.0  
+ */
 include "funciones.php";
 compruebaSesion();
 define("id_titulo", "2");

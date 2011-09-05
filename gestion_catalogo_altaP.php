@@ -1,6 +1,11 @@
 <?php
+/**
+ * En este fichero podemos dar de alta un nuevo titulo 
+ * @author Carlos
+ * @version 1.0
+ */
 include "./funciones.php";
-//compruebasesion();
+compruebasesion();
 iniciaBD();
 ?>
 <!DOCTYPE html>
@@ -8,6 +13,7 @@ iniciaBD();
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
+        <?php fijaPlantillaCSS();?>
     </head>
     <body>
         <?php

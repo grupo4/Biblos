@@ -1,23 +1,23 @@
 <?php
+/**
+ * menu general 
+ * @author grupo4
+ * @version 1.0
+ */
 include "funciones.php";
-//ºcompruebaSesion();
+compruebaSesion();
+$usuario = $_SESSION['usuario'];
 ?>        
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Menu principal Biblos - <?php echo $usuario['nombre_usuario']?></title>
+        <?php fijaPlantillaCSS();?>
     </head>
     <body>
         <h1> MENU</h1>
-        <?php
-        if (!$_SESSION['usuario'] || !isset($_SESSION['usuario'])) {
-            echo "logeate primero";
-        } else {
-            $usuario = $_SESSION['usuario'];
-            echo "Usuario:" . $usuario['nombre_usuario'];
-        }
-        ?>
         <h1>Opciones</h1>   
         <ul><li>Consultas
                 <ul>
@@ -27,6 +27,7 @@ include "funciones.php";
                 </ul>
 
 
+                
                 <?php
                 // Comprobacion del tipo de usuario
                 if ($usuario['tipo_usuario_id_tipo_usuario'] == 0)
