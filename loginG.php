@@ -1,5 +1,5 @@
 <?PHP
-include "funciones.php";
+include "recursos/funciones.php";
 iniciaBD();
 ?>
 <!DOCTYPE html>
@@ -7,14 +7,15 @@ iniciaBD();
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>login</title>
-        <link href="./recursos/login.css" type="text/css" rel="stylesheet" />
+        
+      <link href="./recursos/login.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="js/validaciones1.js"></script>
     </head>
     <body>
         <div id="login">
             <H1>Login</H1>
             <h4>Bilioteca PAI</h4>
-            <form action="loginP.php" method="post" onSubmit="return ValidaCampoVacioConFormato2(this);">
+            <form action="recursos/loginP.php" method="post" onSubmit="return ValidaCampoVacioConFormato2(this);">
                 DNI<br />
                 <input name="dni" type="text" size="20" maxlength="20" class="Obligado"/><br />
                 Contraseña<br />
