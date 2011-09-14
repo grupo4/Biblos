@@ -1,0 +1,36 @@
+/* 
+    Document   : plantilla1
+    Created on : 05-sep-2011, 9:53:09
+    Author     : carlos
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body { 
+    background-color: darkseagreen;
+    color:black;
+}
+legend{
+    color:white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+table{
+    background-color: #d3c8c8;
+    border-color: white;
+    text-align: center;
+}
+
+td{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #d3c8c8;
+    border-color: pink;
+}
+
+
+
