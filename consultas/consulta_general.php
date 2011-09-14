@@ -30,8 +30,11 @@ define("id_titulo", "2");
             <th>C&oacute;digo</th><th>Nombre</th><th>Autor</th>";
             while($fila=mysql_fetch_array($resultado)){
                 $codCompleto = $fila['dewey_id_categoria_dewey'].$fila['id_apellido_autor'].$fila[id_titulo];
-                $autor=codAutor2NombreAutor($fila['autor_id_autor']);
-                $autorCompleto=htmlentities($autor['apellido1']." ".$autor['apellido2'].", ".$autor['nombre_autor']);
+                $autor=obtenerAutor($fila['autor_id_autor']);
+                // ucfirst es una funcion que pone la primera letra de una cadena en mayuscula
+                //strlower es una funcion que pone TODA la cadena en minuscula
+                $apellido1MinusculaConPrimeraMayuscula = ucfirst(strtolower($autor['apellido1']));
+                $autorCompleto=htmlentities($apellido1MinusculaConPrimeraMayuscula." ".ucfirst(strtolower($autor['apellido2'])).", ".ucfirst(strtolower($autor['nombre_autor'])));
                  echo "<tr>
                 <td>$codCompleto</td>
                 <td>".htmlentities($fila['nombre_titulo'])."</td>
